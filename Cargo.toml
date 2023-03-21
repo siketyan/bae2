@@ -2,7 +2,7 @@
 authors = ["David Pedersen <david.pdrsn@gmail.com>"]
 description = "A Rust proc-macro attribute parser"
 documentation = "https://docs.rs/bae"
-edition = "2018"
+edition = "2021"
 homepage = "https://github.com/davidpdrsn/bae"
 keywords = ["macro", "derive", "attributes", "proc"]
 categories = ["development-tools::procedural-macro-helpers"]
