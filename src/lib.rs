@@ -207,8 +207,8 @@ impl FromAttributes {
             } else {
                 quote! {
                     #pattern => {
-                        content.parse::<syn::Token![=]>()?;
-                        #field_name = std::option::Option::Some(content.parse()?);
+                        input.parse::<syn::Token![=]>()?;
+                        #field_name = std::option::Option::Some(input.parse()?);
                     }
                 }
             }
@@ -257,11 +257,8 @@ impl FromAttributes {
                 fn parse(input: syn::parse::ParseStream) -> syn::Result<Self> {
                     #(#variable_declarations)*
 
-                    let content;
-                    syn::parenthesized!(content in input);
-
-                    while !content.is_empty() {
-                        let bae_attr_ident = content.parse::<syn::Ident>()?;
+                    while !input.is_empty() {
+                        let bae_attr_ident = input.parse::<syn::Ident>()?;
 
                         match &*bae_attr_ident.to_string() {
                             #(#match_arms)*
@@ -280,7 +277,7 @@ impl FromAttributes {
                             }
                         }
 
-                        content.parse::<syn::Token![,]>().ok();
+                        input.parse::<syn::Token![,]>().ok();
                     }
 
                     #(#unwrap_mandatory_fields)*
