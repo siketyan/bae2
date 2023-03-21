@@ -3,7 +3,7 @@
 //! simpler API.
 //!
 //! ```rust
-//! use bae::FromAttributes;
+//! use bae2::FromAttributes;
 //!
 //! #[derive(
 //!     Debug,
@@ -103,7 +103,7 @@
 
 extern crate proc_macro;
 
-use heck::SnakeCase;
+use heck::ToSnakeCase;
 use proc_macro2::TokenStream;
 use proc_macro_error::*;
 use quote::*;
