@@ -1,16 +1,19 @@
 [package]
-authors = ["David Pedersen <david.pdrsn@gmail.com>"]
+name = "bae2"
 description = "A Rust proc-macro attribute parser"
-documentation = "https://docs.rs/bae"
+version = "1.0.0"
 edition = "2021"
-homepage = "https://github.com/davidpdrsn/bae"
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/siketyan/bae2"
+documentation = "https://docs.rs/bae2"
+repository = "https://github.com/siketyan/bae2.git"
+authors = [
+    "David Pedersen <david.pdrsn@gmail.com>",
+    "Naoki Ikeguchi <me@s6n.jp>",
+]
 keywords = ["macro", "derive", "attributes", "proc"]
 categories = ["development-tools::procedural-macro-helpers"]
-license = "MIT"
-name = "bae"
-readme = "README.md"
-repository = "https://github.com/davidpdrsn/bae.git"
-version = "0.1.7"
 
 [dependencies]
 syn = { version = "1", features = ["full", "extra-traits"] }
