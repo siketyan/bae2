@@ -16,7 +16,7 @@ keywords = ["macro", "derive", "attributes", "proc"]
 categories = ["development-tools::procedural-macro-helpers"]
 
 [dependencies]
-syn = { version = "1", features = ["full", "extra-traits"] }
+syn = { version = "2", features = ["full", "extra-traits"] }
 quote = "1"
 proc-macro2 = "1"
 proc-macro-error = "1"

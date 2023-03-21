@@ -162,12 +162,8 @@ impl FromAttributes {
                     use syn::spanned::Spanned;
 
                     for attr in attrs {
-                        match attr.path.get_ident() {
-                            Some(ident) if ident == #attr_name => {
-                                return Some(syn::parse2::<Self>(attr.tokens.clone())).transpose()
-                            }
-                            // Ignore other attributes
-                            _ => {},
+                        if attr.path().is_ident(#attr_name) {
+                            return Some(attr.parse_args::<Self>()).transpose()
                         }
                     }
 
